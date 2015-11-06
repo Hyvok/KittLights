@@ -25,8 +25,17 @@ architecture rtl of kitt_lights_top is
 
 begin
 
-    -- Invert reset
-    reset <= not reset_in;
+    -- Synchronize reset signal to clock and invert it
+    sync_reset_p: process(clk_in, reset)
+    begin
+        if rising_edge(clk_in) then
+            if reset_in = '0' then
+                reset <= '1';
+            else
+                reset <= '0';
+            end if;
+        end if;
+    end process;
 
     -- Invert signal for LEDs
     lights_out <= not lights;

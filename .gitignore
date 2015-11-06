@@ -1,0 +1,20 @@
+.*.swp
+
+# Exclude everything in the quartus folder except project-, settings- and
+# timing configuration files
+quartus/*
+!quartus/
+!quartus/*.qpf
+!quartus/*.qsf
+!quartus/*.sdc
+!quartus/*.qip
+!quartus/*.vhd
+
+# Exclude everything in the sim folder except project files and scripts
+sim/*
+!sim/
+sim/*/*
+!sim/*/
+!sim/*/*.mpf
+!sim/*/*.vhd
+!sim/*/*.do
