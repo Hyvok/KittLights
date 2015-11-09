@@ -17,10 +17,7 @@ begin
 
     reset <= '1', '0' after 500 ns;
 
-    clk_gen: process(clk)
-    begin
-        clk <= not clk after CLK_PERIOD / 2;
-    end process;
+    clk <= not clk after CLK_PERIOD / 2;
 
     DUT_inst: entity work.kitt_lights(rtl)
     generic map
